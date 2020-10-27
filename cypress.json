@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://lg.vieon.vn",
+    "viewportHeight": 1080,
+    "viewportWidth": 1920,
+    "waitForAnimations": true
+  }
