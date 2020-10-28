@@ -24,6 +24,10 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+// Mở trang chủ TV https://lg.vieon.vn
+Cypress.Commands.add('Homepage', () => {
+    cy.visit('/', { onBeforeLoad: (win) => { win.sessionStorage.clear() } })
+})
 
 //-----------------Starts Navigation assignment-----------------//
 Cypress.Commands.add('key_left', () => {    // Left arrow

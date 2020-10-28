@@ -4,5 +4,6 @@
   "viewportHeight": 1080,
   "viewportWidth": 1920,
   "waitForAnimations": true,
-  "include": ["custom_function/*.js"]
+  "include": ["custom_function/*.js"],
+  "ignoreTestFiles": "Screen_check.js"
 }
