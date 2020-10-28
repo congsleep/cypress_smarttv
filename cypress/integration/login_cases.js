@@ -2,7 +2,8 @@ import '../custom_function/Setup.js'
 import '../custom_function/On_Error.js'
 
 describe('Login', function (){
-    // Nhập đúng số điện thoại và mã OTP
+// THÔNG TIN ĐĂNG NHẬP HỢP LỆ
+    // Nhập đúng sđt và OTP
     it('C34', function (){
         cy.Homepage()
         // Kiểm tra hiển thị focus
@@ -27,6 +28,7 @@ describe('Login', function (){
         
     })
 
+// THÔNG TIN ĐĂNG NHẬP KHÔNG HỢP LỆ
     // Nhập số điện thoại chưa đăng ký
     it('C73', function () {
         cy.Homepage()
@@ -129,5 +131,13 @@ describe('Login', function (){
         cy.get('body').key_down().key_enter()   // button Xác nhận
         cy.get('.popup-alert-inner').should('be.visible')
             .and('have.text','Mã xác nhận phải có 4 kí tự')
+    })
+
+// FUNCTION HOẠT ĐỘNG CÁC BUTTON
+    // Button Đăng nhập
+    it('C77', function () {
+        cy.Homepage()
+        cy.get('.sc-AxiKw > .focused', {timeout: 15000}).should('be.visible')
+        cy.nav_to_menu_login()
     })
 })
