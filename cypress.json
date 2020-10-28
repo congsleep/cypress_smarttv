@@ -4,5 +4,5 @@
   "viewportHeight": 1080,
   "viewportWidth": 1920,
   "waitForAnimations": true,
-  "projectId": "fa3wrd"
+  "include": ["custom_function/*.js"]
 }

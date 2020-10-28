@@ -1,6 +1,3 @@
-import '../custom_function/Setup.js'
-import '../custom_function/On_Error.js'
-
 describe('Login', function (){
 // THÔNG TIN ĐĂNG NHẬP HỢP LỆ
     // Nhập đúng sđt và OTP
@@ -97,7 +94,7 @@ describe('Login', function (){
         cy.input_valid_phone_num()
         cy.get('body').key_down().key_enter()   // button Tiếp tục
         cy.get('.sign-out-mail')
-            .should('have.text','Vui lòng nhập mã xác nhận vừa được gửi tớisố điện thoại')
+            .should('have.text','Vui lòng nhập mã xác nhận vừa được gửi tớisố điện thoại 0919777999')
         cy.input_invalid_otp()
         cy.get('body').key_down().key_enter()   // button Xác nhận
         cy.get('.popup-alert-inner').should('be.visible')
@@ -126,7 +123,7 @@ describe('Login', function (){
         cy.input_valid_phone_num()
         cy.get('body').key_down().key_enter()   // button Tiếp tục
         cy.get('.sign-out-mail')
-            .should('have.text','Vui lòng nhập mã xác nhận vừa được gửi tớisố điện thoại')
+            .should('have.text','Vui lòng nhập mã xác nhận vừa được gửi tớisố điện thoại 0919777999')
         // input no OTP code
         cy.get('body').key_down().key_enter()   // button Xác nhận
         cy.get('.popup-alert-inner').should('be.visible')
@@ -135,9 +132,23 @@ describe('Login', function (){
 
 // FUNCTION HOẠT ĐỘNG CÁC BUTTON
     // Button Đăng nhập
-    it('C77', function () {
+    it('C77 & C78', function () {
         cy.Homepage()
         cy.get('.sc-AxiKw > .focused', {timeout: 15000}).should('be.visible')
         cy.nav_to_menu_login()
+        // Kiểm tra màn hình
+        cy.get('.setting-inner > img').should('be.visible')
+        cy.get('.sign-out-name').should('be.visible')
+            .and('have.text','Hãy đăng nhập VieON  để có những trải nghiệm tốt nhất')
+        cy.get('.sign-out-mail').should('be.visible')
+            .and('have.text','Xem nội dung, kênh truyền hình bạn yêu thích và nhiều hơn thế nữa')
+        cy.get('.w-11').should('be.visible')
+            .and('have.text','Đăng nhập')
+        cy.get('.btn--signup').should('be.visible')
+            .and('have.text','Đăng ký')
+        cy.get('.nav-short-item-btn').should('be.visible')
+        cy.get('.nav-short-item > :nth-child(2)').should('be.visible')
+            .and('have.text','Quay lại')
+
     })
 })

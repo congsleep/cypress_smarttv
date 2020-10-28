@@ -1,7 +1,3 @@
-import '../custom_function/Setup.js'
-import '../custom_function/On_Error.js'
-import '../custom_function/Navigation.js'
-
 describe('Login', function (){
     // Nhập đúng số điện thoại và mã OTP
     it('C34', function (){

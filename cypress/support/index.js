@@ -15,6 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+//import  './custom_function/Login.js'
+import  './On_Error.js'
+import  './Screen_check.js'
+import  './Setup.js'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
