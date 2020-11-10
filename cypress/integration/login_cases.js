@@ -148,6 +148,7 @@ describe('Login', function (){
         cy.key_enter()
         cy.get('[data-index="0"] > .lst-nation-item-txt').should('be.visible').and('have.text','ĐĂNG NHẬP BẰNG APP VIEON')
         cy.check_screen_login_via_app_code()
+        // So sánh code sau 5 phút
         cy.get('.code').then(($login_code_1) => {
             const login_code_1 = $login_code_1.text()   // lưu giá trị
             cy.wait(305000)
@@ -157,6 +158,7 @@ describe('Login', function (){
         })  
         cy.get('body').key_right().key_enter()
         cy.check_screen_login_via_website_code()
+        // So sánh code sau 5 phút
         cy.get('.text').then(($login_code_1) => {
             const login_code_1 = $login_code_1.text()   // lưu giá trị
             cy.wait(305000)

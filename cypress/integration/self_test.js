@@ -11,26 +11,8 @@ describe('self_test', function (){
         cy.get('.w-11').should('be.visible')
             .and('have.text','Đăng nhập')
         cy.get('.btn--signup').should('be.visible')
-            .and('have.text','Đăng ký')
-        cy.key_enter()
-        cy.get('[data-index="0"] > .lst-nation-item-txt').should('be.visible').and('have.text','ĐĂNG NHẬP BẰNG APP VIEON')
-        cy.check_screen_login_via_app_code()
-        cy.get('.code').then(($login_code_1) => {
-            const login_code_1 = $login_code_1.text()   // lưu giá trị
-            cy.wait(305000)
-            cy.get('.code').should(($login_code_2) => {
-                expect($login_code_2.text()).not.to.eq(login_code_1)
-            })
-        })  
-        cy.get('body').key_right().key_enter()
-        cy.check_screen_login_via_website_code()
-        cy.get('.text').then(($login_code_1) => {
-            const login_code_1 = $login_code_1.text()   // lưu giá trị
-            cy.wait(305000)
-            cy.get('.text').should(($login_code_2) => {
-                expect($login_code_2.text()).not.to.eq(login_code_1)
-            })
-        })
+            .and('have.text','Đăng ký').key_right().key_enter()
+        
 
     })
 })
